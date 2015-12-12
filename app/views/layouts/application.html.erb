@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blogeze</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<% flash.each do |key, value|%>
+		<p><%= value%></p>
+	<%end%>
+
+<%= yield %>
+
+
+   <footer class="blog-footer">
+      <p>Blog creado usando <a href="http://getbootstrap.com">Bootstrap</a> y <a href="https://rubyonrails.org">Ruby on Rails</a>.</p>
+      <p>
+        <a href="#">Volver</a>
+      </p>
+    </footer>
+</body>
+</html>

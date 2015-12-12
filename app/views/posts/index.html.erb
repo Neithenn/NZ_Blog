@@ -1,0 +1,84 @@
+<link href='https://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
+ <!-- Navigation -->
+ <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="/posts">Inicio</a>
+          <a class="blog-nav-item" href="#">Acerca</a>
+        </nav>
+      </div>
+    </div>
+
+    <br>
+
+
+    <div class="container">
+
+    <div class="blog-header">
+        <h1 class="blog-title">Mi viaje por Nueva Zelanda.</h1>
+      
+      </div>
+    <br>
+
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-sm-9 blog-main">
+
+                <!-- First Blog Post -->
+
+      
+
+			   <% @posts.each do |post| %>
+   
+			     <h2 class="blog-post-title"><%= post.title %></h2>
+		    	<p class="blog-post-meta"><%= post.created_at %></p>
+			    <hr>
+                <div class="imgcontainer">
+                <%= image_tag(post.img , :alt => "rss feed", :class => "img-responsive imgpost") %>
+                </div>
+
+                <br>
+                <div id="content blog-post">
+
+
+                <p><%= raw(post.subtitle) %></p>
+
+                </div>
+                <%= link_to "Leer más", post, :class => "btn btn-primary" %>
+
+		    	<hr />
+          <% end %>
+
+      <%= will_paginate @posts, previous_label: h("<"), next_label: h(">") %>
+
+		</div>
+
+      <div class="col-sm-3 blog-sidebar">
+                 <div class="sidebar-module sidebar-module-inset">
+            <h4>Acerca</h4>
+            <p>Mi nombre es Ezequiel, tengo 24 años y soy de Buenos Aires. Luego de recibirme en sistemas decidí dejar mi aburrida vida y empezar a ver el mundo.</p>
+          </div>
+
+              <div class="sidebar-module">
+                <h4>Archivo</h4>
+                <ol class="list-unstyled">
+                  <li><a href="/tags/0">Prólogo</a></li>
+                  <li><a href="/tags/1">Capítulo 1</a></li>
+                  <li><a href="/tags/2">Capítulo 2</a></li>
+                  <li><a href="/tags/3">Capítulo 3</a></li>
+                  <li><a href="/tags/4">Capítulo 4</a></li>
+                  <li><a href="/tags/5">Capítulo 5</a></li>
+                  <li><a href="/tags/6">Capítulo 6</a></li>
+                  <li><a href="/tags/7">Conclusión</a></li>
+                </ol>
+              </div>
+            </div><!-- /.blog-sidebar -->
+
+	</div>
+
+  
+</div>
+
+
+

@@ -1,0 +1,31 @@
+<div class="container well">
+
+<%= form_for @post do |f|%>
+	<p>
+		<%= f.label :title %><br />
+		<%= f.text_field :title, :class => "form-control" %>
+	</p>
+
+	<p>
+	<%= f.label :tag_list, "Capitulos" %><br />
+	<%= f.text_field :tag_list, :class => "form-control" %>
+</p>
+
+<p>
+		<%= f.label :subitle %><br />
+		<%= f.text_area :subtitle, :class =>"form_control", :rows =>"8", :class => "form-control" %>
+	</p>
+
+	<p>
+		<%= f.label :content %><br />
+		<%= f.text_area :content, :class =>"form_control", :rows =>"20", :class => "form-control" %>
+	</p>
+	<p>
+		<%= f.label :img %><br />
+		<%= f.text_field :img, :class => "form-control" %>
+	</p>
+	<p>
+		<%= f.submit "Update Post" %>
+	</p>
+<% end %>
+</div>
